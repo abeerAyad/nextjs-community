@@ -1,0 +1,53 @@
+.signup{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.form{
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: 70%;
+  border-radius: 20px;
+}
+
+.inputContainer{
+  width: 40%;
+}
+
+.input{
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+}
+.input:focus{
+  border: none;
+}
+
+.errorMsg{
+  font-size: 13px;
+  margin-top: 10px;
+  color: red;
+}
+
+.btn{
+  padding: 13px 20px;
+  width: 30%;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+
+.img{
+  border-radius: 50%;
+}
