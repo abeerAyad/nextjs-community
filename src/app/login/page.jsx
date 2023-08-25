@@ -7,14 +7,18 @@ import styles from '../../styles/login.module.css'
 import Image from 'next/image';
 import { FcGoogle } from 'react-icons/fc';
 import { BsGithub } from 'react-icons/bs';
-const Login = () => {
+import { useRouter } from 'next/navigation';
 
+const Login = () => {
+    
+    const router= useRouter()
     const onSubmit = async (values) => {
         const userData = {
             email: values.email,
             password: values.password,
         }
         signIn("credentials", userData);
+        router.push('/')
     }
 
     const { 
@@ -33,7 +37,7 @@ const Login = () => {
     return (
         <div className={styles.wrapper}>
         <div className={styles.card}>
-            <Image src='../../../logo.svg' width={100} height={100}/>
+            <Image src='../../../logo.svg' width={150} height={150}/>
             <h1 className={styles.title}>Login</h1>
             <div className={styles.auth}>
                     <button type='button' className={styles.btn} onClick={() => signIn('google', { callbackUrl: 'http://localhost:3000' })}><FcGoogle style={{fontSize:'25px', }} /></button>

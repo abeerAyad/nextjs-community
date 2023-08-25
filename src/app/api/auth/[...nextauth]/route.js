@@ -24,7 +24,6 @@ const handler = NextAuth({
                           username:user.username,
                           email: user.email,
                           role:user.role, 
-                          image: user.image
                         }; 
 
           if (user) {
@@ -50,6 +49,7 @@ const handler = NextAuth({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
+    
     GithubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
