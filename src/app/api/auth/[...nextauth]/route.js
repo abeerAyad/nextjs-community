@@ -7,7 +7,8 @@ import { compare } from 'bcryptjs';
 import { signJwtAccessToken } from "@/helpers/jwt";
 import { dbConnection } from "@/dbConfig/connection";
 
-const handler = NextAuth({
+
+export const authOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -79,6 +80,7 @@ const handler = NextAuth({
   pages: {
     signIn: '/login'
   }
-});
+}
+const handler = NextAuth(authOptions);
 
 export  { handler as POST, handler as GET };
