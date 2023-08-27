@@ -21,19 +21,21 @@ export async function POST(req, { params: { id } }) {
     } catch (error) {
         console.log(error)
         return NextResponse.json({ error: error.message }, { status: 500 })
-}
+    }
 }
 
 
 
 export async function DELETE(req, { params: { id } }) {
+    console.log("🚀 ~ file: route.js:30 ~ DELETE ~ id:", id)
     try {
-        const deletedComment = await Comment.deleteOne( {commentId: id});
-        return NextResponse.json({ msg: 'Delete Comment Successfully!', deletedComment}, { status: 200})
+        const deletedComment = await Comment.deleteOne({ commentId: id });
+        console.log("🚀 ~ file: route.js:32 ~ DELETE ~ deletedComment:", deletedComment)
+        return NextResponse.json({ msg: 'Delete Comment Successfully!', deletedComment }, { status: 200 })
 
     } catch (error) {
         console.log(error)
-        return NextResponse.json({ error:error.message }, { status: 500 }) 
+        return NextResponse.json({ error: error.message }, { status: 500 })
     }
 }
 
