@@ -8,9 +8,10 @@ dbConnection()
 
 export async function POST(req) {
     const { user } = await getServerSession(req)
+    console.log(user)
     const userData = await User.findOne({ email: user.email })
     try {
-
+console.log('llll')
         const { content, images, status } = await req.json();
         const post = await Post.create({
             content, images, status, userId: userData._id
@@ -22,5 +23,17 @@ export async function POST(req) {
         return NextResponse.json({ error: error.message }, { status: 500 })
     }
 
+}
+
+export async function GET(req) {
+    try {
+        const posts = await Post.find().populate('userId');
+
+        return NextResponse.json({msg:'get posts successfully',posts}, {status:200})
+
+    } catch (error) {
+        console.log(error)
+        return NextResponse.json({ error:error.message }, { status: 500 })
+    }
 }
 

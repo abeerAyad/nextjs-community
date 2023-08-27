@@ -1,4 +1,4 @@
-import { model, models, Schema } from "mongoose";
+import { model, models, Schema, mongoose } from "mongoose";
 
 const postSchema = new Schema({
    content: {
@@ -13,9 +13,14 @@ const postSchema = new Schema({
         type :String,
     },
     userId:{
-        type:Schema.Types.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         ref:'users'
-    }
+    },
+    
+    createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 })
 
 const Post = models.posts || model('posts', postSchema)
