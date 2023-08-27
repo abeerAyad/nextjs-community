@@ -27,10 +27,8 @@ export async function POST(req, { params: { id } }) {
 
 
 export async function DELETE(req, { params: { id } }) {
-    console.log("🚀 ~ file: route.js:30 ~ DELETE ~ id:", id)
     try {
         const deletedComment = await Comment.deleteOne({ commentId: id });
-        console.log("🚀 ~ file: route.js:32 ~ DELETE ~ deletedComment:", deletedComment)
         return NextResponse.json({ msg: 'Delete Comment Successfully!', deletedComment }, { status: 200 })
 
     } catch (error) {
