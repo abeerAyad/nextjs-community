@@ -1,0 +1,59 @@
+.profile{
+  width: 85%;
+}
+
+.userProfile{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.userProfileWall{
+  border: 1px solid #999;
+  height: 300px;
+}
+.userProfileData{
+  display: flex;
+  align-items: center;
+  color: #000;
+}
+.userData{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.userData h3{
+  text-transform: capitalize;
+
+}
+.statusProfile{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.spanStatus{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.newPost{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.newPost a{
+  text-align: start;
+  width: 40%;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #999;
+  margin: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #000;
+  font-weight: 600;
+}
