@@ -1,0 +1,87 @@
+.sidebarContainer{
+  padding: 10px;
+}
+
+.sidebar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.sidebarIconMenu{
+  color: #000;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.sidebarNav{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.sidebarNav li{
+  padding: 10px 12px;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  border-radius: 5px;
+  font-size: 15px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebarNav li:hover{
+  background-color: #999;
+}
+
+.sidebarIcons{
+  font-size: 17px;
+}
+
+.groupsSideBar{
+  transition: 0.3s ease-in-out;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.groupTitle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.groupLists{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  transition: 0.3s ease-in-out;
+
+}
+
+.groupLists li{
+  padding: 10px 12px;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  border-radius: 5px;
+  font-size: 15px;
+  list-style: none;
+}
+
+.groupLists li:hover{
+  background-color: #999;
+}
+
+.groupIconShow{
+  cursor: pointer;
+  color: #000;
+  font-size: 18px;
+}

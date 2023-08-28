@@ -1,0 +1,45 @@
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.textarea{
+  padding: 5px 10px;
+  width: 50%;
+  min-height: 100px;
+  border: 1px solid #999;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: transparent;
+  color: #000;
+}
+
+.input{
+  padding: 10px 10px;
+  width: 50%;
+  border: 1px solid #999;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: transparent;
+  color: #000;
+
+}
+.btn{
+  padding: 8px 20px;
+  width: 120px;
+  border-radius: 8px;
+  border: none;
+  background-color: green;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.newPostImage{
+  justify-self: center;
+  border: 1px solid #999;
+}

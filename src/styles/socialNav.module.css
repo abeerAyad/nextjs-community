@@ -1,0 +1,28 @@
+.socialNav{
+  border: 1px solid red;
+  display: flex;
+  padding: 10px 8%;
+  justify-content: space-between;
+  align-items: center;
+}
+.search{
+  padding: 10px;
+  width: 400px;
+  border-radius: 10px;
+  border: 1px solid #777;
+  background-color: transparent;
+  color: #000;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.userData{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.owner{
+  padding: 10px;
+  color: #000;
+}
