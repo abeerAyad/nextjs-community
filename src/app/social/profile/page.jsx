@@ -3,14 +3,30 @@
 import PostForm from '@/components/postForm'
 import { useSession } from 'next-auth/react'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { IoEllipse, IoMail } from 'react-icons/io5'
 import styles from '@/styles/profile/profile.module.css'
 import Posts from '@/components/postComponent'
 import Link from 'next/link'
+import axios from 'axios'
 
 const Profile = () => {
   const session = useSession()
+
+  const getUserPost = async () => {
+    try {
+      const {data: { posts }} = await axios.get('/api/post');
+      const postUser = posts.filter((post) => post.userId?._id === session?.data?.user?.id)
+    
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getUserPost();
+  }, []);
+
   return (
     <div className={styles.profile}>
       <div className={styles.userProfile}>

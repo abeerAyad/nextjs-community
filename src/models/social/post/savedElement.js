@@ -9,16 +9,16 @@ const savedElementsSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
-    commentId: [{
-        type: Schema.Types.ObjectId,
-        ref: 'comments'
+    commentId: [{ 
+        type: Schema.Types.ObjectId, 
+        ref: 'comments' 
     }],
     createdAt: {
         type: Date,
         default: Date.now,
     },
-})
+});
 
-const SavedElements = models.savedElements || model('savedElements', savedElementsSchema)
+const SavedElement = models.savedElements || model('savedElements', savedElementsSchema);
 
-export default SavedElements;
+export default SavedElement;

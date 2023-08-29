@@ -1,6 +1,6 @@
 import { model, models, Schema, mongoose } from "mongoose";
 
-const postSchema = new Schema({
+const commentSchema = new Schema({
    comment: {
     type: String,
    },
@@ -23,6 +23,6 @@ const postSchema = new Schema({
   },
 })
 
-const Comment = models.comments || model('comments', postSchema)
+const Comment = models.comments || model('comments', commentSchema)
 
 export default Comment;

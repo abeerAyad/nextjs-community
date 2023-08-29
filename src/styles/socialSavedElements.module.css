@@ -1,0 +1,51 @@
+.post {
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.title {
+}
+
+.postWrapper {
+    display: flex;
+    width:100%;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 1px 25px rgba(0, 0, 0, 0.2);
+}
+
+.postProfileImg {
+    border-radius: 10px;
+}
+
+.postDetails {
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.postDate {
+    font-size: 13px;
+}
+
+.dot {
+    width:20px;
+    height: 20px
+}
+
+.userPost {
+    display: flex;
+    align-items: center;
+    margin-top: 10PX
+}
+
+.userPhoto {
+    width:32px;
+    height:32px;
+    border-radius: 50%;
+}
+
+.postUsername {
+    margin-left: 10px;
+}

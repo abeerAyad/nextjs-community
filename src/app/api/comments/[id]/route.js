@@ -44,7 +44,7 @@ export async function GET(req, { params: { id } }) {
         const comments = await Comment.find({ postId: id }).populate('userId').populate('postId');
         return NextResponse.json({ msg: 'get comment successfully', comments }, { status: 200 });
     } catch (error) {
-        console.log(error);
+        console.log(error,'llll');
         return NextResponse.json({ error: error.message }, { status: 500 });
     }
 }
