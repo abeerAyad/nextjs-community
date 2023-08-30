@@ -14,11 +14,13 @@ export async function POST(req, { params: { id } }) {
         const savedElement = await SavedElements.create({
             postId: id,
             userId: userData._id,
-            commentId: data,
+            commentId:data,
         })
+        console.log(savedElement,'post');
         return NextResponse.json({ msg: 'Saved Element successfully', savedElement }, { status: 201 })
 
     } catch (error) {
+        console.log(error,'post saved')
         return NextResponse.json({ error: error.message }, { status: 500 })
     }
 }

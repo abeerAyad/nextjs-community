@@ -12,7 +12,7 @@ const Posts = ({ userId }) => {
     const [posts, setPosts] = useState([]);
     const [userPosts, setUserPosts] = useState([])
     const [commentPost, setCommentPost] = useState([]);
-    const userOwnPosts = posts.filter((item) => item.userId._id === userId)
+    const userOwnPosts = posts.filter((item) => item.userId?._id === userId)
     const session = useSession()
     const [newComment, setNewComment] = useState({
         comment: '',
@@ -132,10 +132,13 @@ const Posts = ({ userId }) => {
 
                         </div>
                         <div className={styles.postContent}>
+                            <Link href={`/social/saved-item/${postItem?._id}`}>
+
                             {
                                 postItem?.content && <p>{postItem.content}</p>
 
                             }
+                            </Link>
                             <div
                                 className={styles.imagesPostContainer}
                                 style={{
@@ -148,7 +151,8 @@ const Posts = ({ userId }) => {
                                     postItem?.images?.length > 0 && postItem.images.map((img) =>
                                         <Image
                                             className={styles.postImages}
-                                            key={img} src={img}
+                                            key={img} 
+                                            src={img}
                                             alt='userImage'
                                             width={postItem?.images?.length > 1 ? 400 : 500} height={400}
                                         />
