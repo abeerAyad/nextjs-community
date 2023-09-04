@@ -1,5 +1,4 @@
 .socialNav{
-  border: 1px solid red;
   display: flex;
   padding: 10px 8%;
   justify-content: space-between;
@@ -9,9 +8,9 @@
   padding: 10px;
   width: 400px;
   border-radius: 10px;
-  border: 1px solid #777;
+  border: 1px solid #33a5eb;
   background-color: transparent;
-  color: #000;
+  color: #fff;
   font-weight: 600;
   font-size: 14px;
 }

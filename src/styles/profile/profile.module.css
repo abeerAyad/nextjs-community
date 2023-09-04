@@ -15,7 +15,7 @@
 .userProfileData{
   display: flex;
   align-items: center;
-  color: #000;
+  color: #fff;
 }
 .userData{
   display: flex;
@@ -50,10 +50,17 @@
   width: 40%;
   padding: 20px;
   border-radius: 20px;
-  border: 1px solid #999;
+  border: 1px solid #000;
   margin: 20px;
   cursor: pointer;
   background-color: transparent;
-  color: #000;
-  font-weight: 600;
+  color: #fff;
+  font-size: 14px;
+}
+
+.userPostsContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

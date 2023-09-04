@@ -9,6 +9,7 @@ const SocialHome = () => {
 
     <div className={styles.postMain}>
       <div className={styles.newPost}>
+        <p>add new post</p>
         <Link href='/social/post'>What's on your mind</Link>
       </div>
       <Posts />

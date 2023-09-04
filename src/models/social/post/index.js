@@ -1,23 +1,23 @@
 import { model, models, Schema, mongoose } from "mongoose";
 
 const postSchema = new Schema({
-   content: {
+  content: {
     type: String,
-   },
+  },
 
-   images: [{
+  images: [{
     type: String
-    }],
+  }],
 
-    status: {
-        type :String,
-    },
-    userId:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'users'
-    },
-    
-    createdAt: {
+  status: {
+    type: String,
+  },
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'users'
+  },
+
+  createdAt: {
     type: Date,
     default: Date.now,
   },

@@ -1,0 +1,54 @@
+.SingleGroupContainer{
+  width: 85%;
+}
+
+.groupWallpaper{
+  height: 250px;
+}
+
+.groupWallpaper img{
+  width: 100%;
+  height: 100%;
+}
+
+.groupDetailsContainer{
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  padding: 10px 50px;
+}
+
+.groupDetails{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #000;
+}
+
+.groupDetails h4{
+  font-size: 16px;
+}
+
+.groupJoinBtn{
+    padding: 8px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.groupPageMain{
+  margin: 50px 0px;
+}
+
+.groupPosts{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 50px;
+}

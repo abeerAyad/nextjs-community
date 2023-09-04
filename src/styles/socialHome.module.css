@@ -1,47 +1,50 @@
 .main{
   display: flex;
   min-height: 100vh;
+  background-color: #0a0a0a;
 }
 
 .sidebar{
-  border: 1px solid red;
   width: 15%;
+  background-color: #000;
+  padding: 20px 0px;
 }
 .postMain{
-  padding: 10px 0px;
+  padding: 20px 0px;
   width: 85%;
   min-height: 100vh;
 }
 
-.popupForm{
-  border: 1px solid blue;
-  position: absolute;
-  top: 80px;
-  width: 80%;
-  min-height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 2;
-  padding: 20px;
-}
+
 
 .newPost{
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  width: 60%;
+  margin: auto;
+  border: 1px solid #000;
+  padding: 20px;
+  gap: 10px;
+}
+
+.newPost p{
+  font-size: 13px;
+  text-transform: capitalize;
+  padding: 10px 20px;
 
 }
 
 .newPost a{
   text-align: start;
-  width: 40%;
+  width: 100%;
   padding: 20px;
   border-radius: 20px;
-  border: 1px solid #999;
-  margin: 20px;
+  border: 1px solid #000;
   cursor: pointer;
   background-color: transparent;
-  color: #000;
-  font-weight: 600;
+  color: #fff;
+  font-size: 14px;
 }
 
 .postContainer{
@@ -54,8 +57,8 @@
 }
 
 .post{
-  border: 1px solid #999;
-  width: 70%;
+  border: 1px solid #000;
+  width: 60%;
   padding: 10px;
   position: relative;
 }
@@ -66,28 +69,25 @@
 }
 .dropDownPost{
   position: absolute;
-  border: 1px solid #999;
-  right: 11px;
+   right: 11px;
   top: 30px;
   width: 150px;
   flex-direction: column;
   justify-content: center;
   gap: 12px;
   padding: 12px 6px;
-  background-color: #f5f5f5;
+  background-color: #000;
 }
 
 .showText{
   font-size: 12px;
-  color: #000;
+  color: #fff;
   font-weight: 600;
 }
 
 .selectStatus{
   padding: 8px 10px;
-  border: 1px solid #999;
   background-color: transparent;
-  color: #000;
   font-weight: 600;
 }
 
@@ -106,13 +106,13 @@
 .iconForDropDown{
   font-size: 25px;
   cursor: pointer;
-  color: #000;
+  color: #fff;
 }
 
 .iconDropDown{
   font-size: 20px;
   cursor: pointer;
-  color: #000;
+  color: #fff;
 }
 
 .userData{
@@ -128,7 +128,7 @@
 
 .userDataStyle h4{
   text-transform: capitalize;
-  color: #000;
+  color: #fff;
 }
 
 .userDataStyle h5{
@@ -145,7 +145,7 @@
 .postContent p{
   font-size: 17px;
   margin: 20px 0px;
-  color: #000;
+  color: #fff;
 }
 
 .imagesPostContainer{
@@ -154,15 +154,18 @@
 
 
 .postImages{
-  border: 1px solid #999;
+  border: 2px solid #000;
   width: 100%;
   border-radius: 20px;
+  object-fit: contain;
 }
 
 .postButtons{
-  margin-top: 20px;
+  margin: 20px 0px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  position: relative;
 }
 
 .postButtons div{
@@ -173,12 +176,12 @@
 }
 
 .postButtons div span{
-  color: #000;
+  color: #fff;
   font-size: 14px;
 }
 
 .postBtnAction{
-  color: #000;
+  color: #fff;
   font-size: 20px;
 }
 
@@ -186,11 +189,11 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 20px;
+  margin: 20px 0px;
 }
 
 .comment{
-  border: 1px solid #999;
+  border: 1px solid #000;
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -205,16 +208,16 @@
 }
 
 .userComment div{
-  color: #000;
+  color: #fff;
 }
 
 .userComment div h5{
   text-transform: capitalize;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .userComment div p {
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .commentBtn{
@@ -227,11 +230,11 @@
 
 .commentBtn p{
   font-size: 12px;
-  color: #999;
+  color: #fff;
 }
 
 .deleteCommentBtn{
-  color: #000;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -242,6 +245,7 @@
   align-items: center;
   gap: 10px;
   margin-top: 20px;
+  color: #fff;
 }
 
 .inpComments div{
@@ -256,7 +260,72 @@
   background-color: transparent;
   border: 1px solid #999;
   border-radius: 10px;
-  color: #000;
+  color: #fff;
   font-size: 16px;
   width: 90%;
 }
+
+.iconDropDown:hover{
+  color: blue;
+}
+
+.reactions{
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 350px;
+  top: -80px;
+  right: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  z-index: 99;
+}
+
+
+.reactIconDiv{
+  transition: 0.3s ease-in-out;
+
+}
+.reactIconDiv:hover{
+  transform: scale(1.2);
+}
+
+.reactionsContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reaction{
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid #000;
+}
+
+.userReactionDetails{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0.9;
+}
+
+.userReactionDetails h4{
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.userReactionImage img{
+  border-radius: 50%;
+}
+
+.reaction p{
+  font-size: 12px;
+   color: #ccc;
+}
+

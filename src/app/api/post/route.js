@@ -8,12 +8,9 @@ dbConnection()
 
 export async function POST(req) {
     const { user } = await getServerSession(req)
-    console.log(user)
     const userData = await User.findOne({ email: user.email })
     try {
-console.log('llll')
         const { content, images, status } = await req.json();
-        console.log("🚀 ~ file: route.js:16 ~ POST ~ images:", images)
         const post = await Post.create({
             content, images, status, userId: userData._id
         })
