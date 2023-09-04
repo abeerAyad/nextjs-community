@@ -1,23 +1,23 @@
 'use client'
 
-import PostForm from '@/components/postForm'
 import { useSession } from 'next-auth/react'
 import Image from 'next/image'
-import React, { useEffect } from 'react'
-import { IoEllipse, IoMail } from 'react-icons/io5'
+import React, { useEffect, useState } from 'react'
+import { IoEllipse } from 'react-icons/io5'
 import styles from '@/styles/profile/profile.module.css'
-import Posts from '@/components/postComponent'
 import Link from 'next/link'
 import axios from 'axios'
+import SinglePost from '@/components/singlePost'
 
 const Profile = () => {
   const session = useSession()
-
+  const [userPosts, setUserPosts] = useState([])
+  console.log("🚀 ~ file: page.jsx:16 ~ Profile ~ userPosts:", userPosts[0])
   const getUserPost = async () => {
     try {
-      const {data: { posts }} = await axios.get('/api/post');
-      const postUser = posts.filter((post) => post.userId?._id === session?.data?.user?.id)
-    
+      const { data: { posts } } = await axios.get('/api/post/user');
+      console.log("🚀 ~ file: page.jsx:19 ~ getUserPost ~ posts:", posts)
+      setUserPosts([...userPosts, posts])
     } catch (error) {
       console.log(error)
     }
@@ -58,8 +58,12 @@ const Profile = () => {
       <div className={styles.newPost}>
         <Link href='/social/post'>What's on your mind</Link>
       </div>
-      <div>
-        <Posts userId={session?.data?.user?.id} />
+      <div className={styles.userPostsContainer}>
+        {userPosts[0]?.length > 0 ?
+         userPosts[0]?.map((postItem) =>
+          <SinglePost postItem={postItem} />
+        ) :
+          <h2>there is no posts</h2>}
       </div>
     </div>
   )

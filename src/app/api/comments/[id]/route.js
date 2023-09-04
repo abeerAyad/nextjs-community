@@ -14,7 +14,7 @@ export async function POST(req, { params: { id } }) {
             comment,
             image,
             postId: id,
-            userId: userData._id
+            userId: userData?._id
         })
         return NextResponse.json({ msg: 'comment created successfully', commentData }, { status: 201 })
 
@@ -28,7 +28,7 @@ export async function POST(req, { params: { id } }) {
 
 export async function DELETE(req, { params: { id } }) {
     try {
-        const deletedComment = await Comment.deleteOne({ commentId: id });
+        const deletedComment = await Comment.deleteOne({ _id: id });
         return NextResponse.json({ msg: 'Delete Comment Successfully!', deletedComment }, { status: 200 })
 
     } catch (error) {
@@ -44,7 +44,7 @@ export async function GET(req, { params: { id } }) {
         const comments = await Comment.find({ postId: id }).populate('userId').populate('postId');
         return NextResponse.json({ msg: 'get comment successfully', comments }, { status: 200 });
     } catch (error) {
-        console.log(error,'llll');
+        console.log(error, 'llll');
         return NextResponse.json({ error: error.message }, { status: 500 });
     }
 }

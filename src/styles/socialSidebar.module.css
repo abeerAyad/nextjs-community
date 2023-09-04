@@ -10,9 +10,14 @@
 }
 
 .sidebarIconMenu{
-  color: #000;
-  font-size: 25px;
+  color: #ccc;
+  font-size: 23px;
   cursor: pointer;
+}
+
+.sidebar h4{
+  font-size: 15px;
+  color: #ccc;
 }
 
 .sidebarNav{
@@ -25,11 +30,11 @@
 
 .sidebarNav li{
   padding: 10px 12px;
-  color: #000;
+  color: #fff;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 14px;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -37,7 +42,7 @@
 }
 
 .sidebarNav li:hover{
-  background-color: #999;
+  background-color: #33a5eb;
 }
 
 .sidebarIcons{
@@ -64,20 +69,6 @@
   margin-top: 20px;
   transition: 0.3s ease-in-out;
 
-}
-
-.groupLists li{
-  padding: 10px 12px;
-  color: #000;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  border-radius: 5px;
-  font-size: 15px;
-  list-style: none;
-}
-
-.groupLists li:hover{
-  background-color: #999;
 }
 
 .groupIconShow{
