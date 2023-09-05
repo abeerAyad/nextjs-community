@@ -49,7 +49,7 @@ const GroupPostForm = ({ groupId, getFunction }) => {
 
       }}>
         {image.length > 0 &&
-          image.map((img,i) =>
+          image?.map((img,i) =>
             <Image key={i} className={styles.newPostImage} src={img} alt='imagePost' width={400} height={400} />
           )
 

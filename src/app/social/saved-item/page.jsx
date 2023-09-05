@@ -30,23 +30,23 @@ const SavedItem = () => {
           <Link href={`/social/single-post/${post?.postId?._id}`} key={post._id}>
             <div className={styles.postWrapper}>
               <div className={styles.postImage}>
-                <Image
+                {post?.postId?.images[0] && <Image
                   className={styles.postProfileImg}
-                  src={post.postId?.images[0]}
+                  src={post?.postId?.images[0]}
                   alt=""
                   width={160}
                   height={160}
-                />
+                />}
               </div>
               <div className={styles.postDetails}>
                 <div className={styles.userPost}>
-                  <img src={post.userId?.image} alt='' className={styles.userPhoto} />
+                  <img src={post?.userId?.image} alt='' className={styles.userPhoto} />
 
                   <div className={styles.postUsername}>
-                    posted by <strong>{post.userId.username}</strong>
+                    posted by <strong>{post?.userId?.username}</strong>
                   </div>
                 </div>
-                <h3 className={styles.postTitle}>{post.postId?.content}</h3>
+                <h3 className={styles.postTitle}>{post?.postId?.content}</h3>
 
 
 

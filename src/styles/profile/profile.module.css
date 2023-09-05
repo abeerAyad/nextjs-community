@@ -22,10 +22,12 @@
   flex-direction: column;
   gap: 10px;
 }
-.userData h3{
+.userData h4{
+  color: #fff;
   text-transform: capitalize;
-
 }
+
+
 .statusProfile{
   display: flex;
   flex-direction: column;

@@ -118,7 +118,7 @@ const Signup = () => {
             onBlur={handleBlur}
             accept='.jpeg, .png, .jpg'
             style={{
-              border: errors.image && touched.image ? '1px solid red' : ''
+              border: errors.image && touched?.image ? '1px solid red' : ''
             }}
           />
           {image &&

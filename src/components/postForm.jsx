@@ -40,7 +40,7 @@ const PostForm = () => {
 
         }}>
           {image.length > 0 &&
-            image.map((img) =>
+            image?.map((img) =>
               <Image className={styles.newPostImage} src={img} alt='imagePost' width={400} height={400} />
             )
 

@@ -8,23 +8,46 @@ import styles from '@/styles/profile/profile.module.css'
 import Link from 'next/link'
 import axios from 'axios'
 import SinglePost from '@/components/singlePost'
+import Posts from '@/components/postComponent'
 
 const Profile = () => {
   const session = useSession()
   const [userPosts, setUserPosts] = useState([])
-  console.log("🚀 ~ file: page.jsx:16 ~ Profile ~ userPosts:", userPosts[0])
+  const [sharePost, setSharePost] = useState([])
+  
   const getUserPost = async () => {
     try {
       const { data: { posts } } = await axios.get('/api/post/user');
-      console.log("🚀 ~ file: page.jsx:19 ~ getUserPost ~ posts:", posts)
-      setUserPosts([...userPosts, posts])
+      const { data: { sharePostData } } = await axios.get('/api/share');
+      console.log(sharePostData,'djdjjd')
+      const sharedPosts = sharePostData?.map(shareData => ({
+        _id: shareData?._id,
+        content: shareData.postId?.content,
+        status: shareData.postId?.status,
+        images: shareData.postId?.images,
+        userId: shareData?.postId?.userId,
+        isShared: shareData.isShared,
+        userSharedPostId: shareData.userId
+      }));
+     
+
+      const allPosts = sharedPosts ? [...posts, ...sharedPosts] : posts
+      console.log(allPosts)
+      setUserPosts(allPosts);
+
     } catch (error) {
-      console.log(error)
+      console.error(error);
     }
   }
 
+  
+
+  console.log(sharePost, 'posts')
+
+  console.log(userPosts,'jjj')
   useEffect(() => {
     getUserPost();
+  
   }, []);
 
   return (
@@ -95,10 +118,14 @@ const Profile = () => {
         <Link href='/social/post'>What's on your mind</Link>
       </div>
       <div className={styles.userPostsContainer}>
-        {userPosts[0]?.length > 0 ?
-          userPosts[0]?.map((postItem) =>
-            <SinglePost postItem={postItem} />
-          ) :
+      
+
+        {userPosts?.length > 0 ?
+          userPosts?.map((postItem) =>{
+
+          return ( <SinglePost postItem={postItem}  />)
+         }
+        ) :
           <h2>there is no posts</h2>}
       </div>
     </div>

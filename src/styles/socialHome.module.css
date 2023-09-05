@@ -61,7 +61,9 @@
   width: 60%;
   padding: 10px;
   position: relative;
+  color: #fff;
 }
+
 
 .userPost{
   display: flex;
