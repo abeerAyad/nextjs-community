@@ -76,6 +76,42 @@ const Profile = () => {
             </div>
 
           </div>
+          <div className={styles.followers}>
+            <p>followers : 25</p>
+            <p>following : 50</p>
+          </div>
+        </div>
+      </div>
+      <div className={styles.userInfosContainer}>
+        <nav className={styles.userInfosNav}>
+          <ul className={styles.userInfosNavList}>
+            <li> <Link href='/social/profile/about'>about</Link> </li>
+            <li> <Link href='/social/profile/friends'>friends</Link></li>
+            <li><Link href='/social/profile/statistics'>statistics</Link></li>
+            <li><Link href='/social/profile/images'>images</Link></li>
+          </ul>
+        </nav>
+        <div className={styles.userInfos}>
+          <div>
+            <p>university :</p>
+            <span>al-Azhar</span>
+          </div>
+          <div>
+            <p>country :</p>
+            <span>palestine</span>
+          </div>
+          <div>
+            <p>major :</p>
+            <span>Software Developer</span>
+          </div>
+          <div>
+            <p>whatsApp :</p>
+            <span>542533111</span>
+          </div>
+          <div>
+            <p>Jop :</p>
+            <span>sleeping</span>
+          </div>
         </div>
       </div>
       <div className={styles.newPost}>
