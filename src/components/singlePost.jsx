@@ -21,8 +21,17 @@ const SinglePost = ({ postItem, getFunction }) => {
   });
 
   const addReaction = async (postId, reactIcon) => {
-    const { data } = axios.post(`/api/reactions/${postId}`, { reactIcon })
+    const { data } = await axios.post(`/api/reactions/${postId}`, { reactIcon })
 
+  }
+
+  const addSharePost = async (postId) => {
+    try {
+      const data = await axios.post(`/api/share/${postId}`);
+      console.log(data,'ooo')
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const getReactions = async () => {
@@ -86,6 +95,12 @@ const SinglePost = ({ postItem, getFunction }) => {
   return (
     <div key={postItem._id} className={styles.post}>
       <div className={styles.userPost}>
+        {postItem.isShared && <div className="userSharedPost">
+          <h4>{postItem?.userSharedPostId?.username}</h4>
+          <Image className={styles.userImage} 
+            src={postItem?.userSharedPostId?.image}
+           width={50} height={50} />
+          </div>}
         <div className={styles.userData}>
           <Image className={styles.userImage} src={postItem?.userId?.image} alt='userImage' width={50} height={50} />
           <div className={styles.userDataStyle}>
@@ -144,7 +159,7 @@ const SinglePost = ({ postItem, getFunction }) => {
             height: '100%'
           }}>
           {
-            postItem?.images?.length > 0 && postItem.images.map((img) =>
+            postItem?.images?.length > 0 && postItem?.images?.map((img) =>
               <Image
                 className={styles.postImages}
                 key={img}
@@ -158,7 +173,7 @@ const SinglePost = ({ postItem, getFunction }) => {
 
       </div>
       <div className={styles.postButtons}>
-        <div>
+        <div onClick={() => addSharePost(postItem._id)}>
           <IoArrowUndo className={styles.postBtnAction} />
           <span>Share</span>
         </div>
